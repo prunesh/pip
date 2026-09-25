@@ -1,6 +1,6 @@
-# gtk-ai/pip
+# prunesh/pip
 
-Token-reduction plugin for [gtk-ai](https://github.com/gtk-ai/gtk-ai) that filters `pip` output.
+Token-reduction plugin for [prunesh](https://github.com/prunesh/prunesh) that filters `pip` output.
 
 A typical `pip install -r requirements.txt` with 30 packages produces 200–500 lines of download progress,
 dependency resolution, and wheel-building noise. This plugin compresses that to the lines that actually matter.
@@ -36,34 +36,34 @@ Successfully installed numpy-1.26.4 torch-2.0.0
 
 ## Install
 
-Requires [gtk-ai core](https://github.com/gtk-ai/gtk-ai) >= 0.12.0.
+Requires [prunesh core](https://github.com/prunesh/prunesh) >= 0.12.0.
 
 ```bash
-gtkai plugin install github.com/gtk-ai/pip@v0.1.0
+prunesh plugin install github.com/prunesh/pip@v0.1.0
 ```
 
 To replace an existing `pip` plugin:
 
 ```bash
-gtkai plugin install github.com/gtk-ai/pip@v0.1.0 --replace
+prunesh plugin install github.com/prunesh/pip@v0.1.0 --replace
 ```
 
 ## Uninstall
 
 ```bash
-gtkai plugin uninstall gtk-ai/pip
+prunesh plugin uninstall prunesh/pip
 ```
 
 ## How it works
 
-The plugin speaks the `stdin/v1` protocol with the gtk-ai core proxy:
+The plugin speaks the `stdin/v1` protocol with the prunesh core proxy:
 
 - **Rewrite**: injects `--progress-bar=off` into `install`/`download`/`wheel` invocations when no quieting flag (`-q`, `--quiet`) is already present. This eliminates multi-line download-progress output before filtering even runs.
 - **FilterOutput**: applies rule-based heuristics to strip noise and keep actionable lines.
 
 ## pip3
 
-`pip3` is a separate argv0. A `gtk-ai/pip3` plugin with identical logic will be published separately.
+`pip3` is a separate argv0. A `prunesh/pip3` plugin with identical logic will be published separately.
 
 ## License
 

@@ -1,7 +1,7 @@
-// Package filter implements the gtk-ai/pip filter logic.
+// Package filter implements the prunesh/pip filter logic.
 //
 // Contract:
-//   - id:      gtk-ai/pip
+//   - id:      prunesh/pip
 //   - command: pip
 //
 // Rewrite: injects --progress-bar=off into install/download/wheel when no
@@ -18,7 +18,7 @@ import (
 
 const (
 	// ID is the full filter identity following the author/<name> rule.
-	ID = "gtk-ai/pip"
+	ID = "prunesh/pip"
 
 	// Command is the argv0 intercepted by this module.
 	Command = "pip"
