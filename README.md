@@ -36,16 +36,16 @@ Successfully installed numpy-1.26.4 torch-2.0.0
 
 ## Install
 
-Requires [prunesh core](https://github.com/prunesh/prunesh) >= 0.12.0.
+Requires [prunesh core](https://github.com/prunesh/prunesh) >= 0.16.0.
 
 ```bash
-prunesh plugin install github.com/prunesh/pip@v0.1.0
+prunesh plugin install github.com/prunesh/pip@v0.3.0
 ```
 
 To replace an existing `pip` plugin:
 
 ```bash
-prunesh plugin install github.com/prunesh/pip@v0.1.0 --replace
+prunesh plugin install github.com/prunesh/pip@v0.3.0 --replace
 ```
 
 ## Uninstall
